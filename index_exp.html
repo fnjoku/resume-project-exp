@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Resume</title>
+  <!-- Optional: simple baseline styles for readability -->
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; line-height: 1.5; margin: 2rem; }
+    header, main, section, footer { max-width: 56rem; margin-inline: auto; }
+    h1, h2 { margin: 0 0 .5rem; }
+    section { margin: 1.5rem 0; }
+    ul { padding-left: 1.2rem; }
+    .sr-only { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Lesson 2 target: name is filled by JS -->
+    <h1 id="name" aria-live="polite">Your Name</h1>
+
+    <!-- Contact -->
+    <p>
+      <strong>Email:</strong>
+      <a id="email" href="mailto:your_email@example.com">your_email@example.com</a>
+    </p>
+  </header>
+
+  <main>
+    <section aria-labelledby="edu-heading">
+      <h2 id="edu-heading">Education</h2>
+      <!-- Lesson 2 target: updated by JS -->
+      <p id="education">Education goes here</p>
+    </section>
+
+    <section aria-labelledby="exp-heading">
+      <h2 id="exp-heading">Experience</h2>
+      <!-- Lesson 2 target: updated by JS -->
+      <p id="experience">Experience goes here</p>
+    </section>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <!-- Lesson 3 target: JS will build & insert a UL here -->
+      <div id="skills-container" aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="fun-heading">
+      <h2 id="fun-heading" class="sr-only">Interactivity</h2>
+      <!-- Lesson 3 button; we’ll attach the listener in JS -->
+      <button type="button" id="fun-btn">Show Fun Fact</button>
+    </section>
+  </main>
+
+  <footer>
+    <p id="updated"><em>Last updated:</em> —</p>
+    <noscript>
+      <p><strong>Note:</strong> This page uses JavaScript to load resume details.</p>
+    </noscript>
+  </footer>
+
+  <script src="resume_exp.js"></script>
+</body>
+</html>
